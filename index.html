@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FertiClock · See your ovarian age, early enough to plan</title>
+<meta name="description" content="FertiClock is developing a finger-prick blood test that estimates your ovarian age as a range, next to your real age, explained in plain language. In development, not yet available. Join the waitlist.">
+<meta name="theme-color" content="#FFF9F5">
+<link rel="alternate" hreflang="en" href="./">
+<link rel="alternate" hreflang="el" href="el/">
+<link rel="alternate" hreflang="x-default" href="./">
+
+<!-- Open Graph / Twitter. TODO: add og:url and og:image (1200×630) once the domain and image exist. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FertiClock">
+<meta property="og:title" content="FertiClock · See your ovarian age, early enough to plan">
+<meta property="og:description" content="A finger-prick blood test in development that estimates your ovarian age next to your real age. Join the waitlist.">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="el_GR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FertiClock · See your ovarian age, early enough to plan">
+<meta name="twitter:description" content="A finger-prick blood test in development that estimates your ovarian age next to your real age. Join the waitlist.">
+
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/literata-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/img/hero-600.webp" as="image" imagesrcset="assets/img/hero-600.webp 600w, assets/img/hero-1000.webp 1000w" imagesizes="(min-width: 1024px) 460px, 310px">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FertiClock",
+  "description": "A research project from the National Technical University of Athens developing a blood test that estimates ovarian age.",
+  "logo": "assets/logo/fertiClock-mark.png",
+  "address": { "@type": "PostalAddress", "addressLocality": "Athens", "addressCountry": "GR" }
+}
+</script>
+<script src="js/main.js" defer></script>
+</head>
+<body>
+
+<!-- Icon sprite (stroke icons, 24px grid). Colour comes from CSS `color`. -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
+  <symbol id="i-circles" viewBox="0 0 24 24"><circle cx="9" cy="12" r="5.5"/><circle cx="15" cy="12" r="5.5"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 12l4-4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.1-4.6A8 8 0 1 1 21 12z"/></symbol>
+  <symbol id="i-grad" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="10" r="2"/><path d="M15.5 20c0-2.2 1-3.8 3-4.3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="FertiClock home">
+      <img class="brand-mark" src="assets/logo/fertiClock-mark.png" alt="" width="76" height="84">
+      <img class="brand-word" src="assets/logo/fertiClock-wordmark.png" alt="" width="597" height="90">
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="#why">Why it matters</a>
+      <a href="#how">How it works</a>
+      <a href="#science">The science</a>
+      <a href="#team">Team</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="lang-toggle nav-desktop-only" aria-label="Language" role="group">
+      <a href="./" aria-current="page">EN</a>
+      <a href="el/" lang="el" hreflang="el">ΕΛ</a>
+    </div>
+    <a class="btn btn-primary nav-desktop-only" href="#waitlist">Join the waitlist</a>
+    <a class="btn btn-primary btn-sm nav-mobile-only" href="#waitlist">Waitlist</a>
+    <button class="icon-btn nav-mobile-only" type="button" id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg aria-hidden="true" class="ico" width="22" height="22"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE MENU (full-screen overlay) ============ -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <svg class="deco deco-menu" aria-hidden="true" width="520" height="520" viewBox="0 0 520 520">
+    <circle cx="260" cy="260" r="250" fill="none" stroke="currentColor" stroke-opacity="0.10" stroke-width="1.5" stroke-dasharray="1200 370"/>
+    <circle cx="260" cy="260" r="190" fill="none" stroke="currentColor" stroke-opacity="0.07" stroke-width="1"/>
+    <line x1="260" y1="260" x2="190" y2="190" stroke="currentColor" stroke-opacity="0.14" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <div class="mobile-menu-head">
+    <a class="brand" href="#top" aria-label="FertiClock home" data-menu-link>
+      <img class="brand-mark" src="assets/logo/fertiClock-mark.png" alt="" width="76" height="84">
+      <img class="brand-word" src="assets/logo/fertiClock-wordmark.png" alt="" width="597" height="90">
+    </a>
+    <button class="icon-btn icon-btn-plum" type="button" id="menu-close" aria-label="Close menu">
+      <svg aria-hidden="true" class="ico" width="20" height="20"><use href="#i-close"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu-nav" aria-label="Main (mobile)">
+    <a href="#why" data-menu-link>Why it matters <svg aria-hidden="true" class="ico" width="20" height="20"><use href="#i-arrow"/></svg></a>
+    <a href="#how" data-menu-link>How it works <svg aria-hidden="true" class="ico" width="20" height="20"><use href="#i-arrow"/></svg></a>
+    <a href="#science" data-menu-link>The science <svg aria-hidden="true" class="ico" width="20" height="20"><use href="#i-arrow"/></svg></a>
+    <a href="#team" data-menu-link>Team <svg aria-hidden="true" class="ico" width="20" height="20"><use href="#i-arrow"/></svg></a>
+    <a href="#faq" data-menu-link>FAQ <svg aria-hidden="true" class="ico" width="20" height="20"><use href="#i-arrow"/></svg></a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <div class="lang-toggle lang-toggle-lg" aria-label="Language" role="group">
+      <a href="./" aria-current="page">EN</a>
+      <a href="el/" lang="el" hreflang="el">ΕΛ</a>
+    </div>
+    <a class="btn btn-primary btn-block btn-xl" href="#waitlist" data-menu-link>Join the waitlist <svg aria-hidden="true" class="ico" width="18" height="18"><use href="#i-arrow"/></svg></a>
+    <p class="menu-note">In development · not yet available. Not a medical device.</p>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="top">
+  <svg class="deco deco-hero" aria-hidden="true" width="760" height="760" viewBox="0 0 760 760">
+    <circle cx="380" cy="380" r="370" fill="none" stroke="currentColor" stroke-opacity="0.10" stroke-width="1.5" stroke-dasharray="1800 520"/>
+    <circle cx="380" cy="380" r="300" fill="none" stroke="currentColor" stroke-opacity="0.07" stroke-width="1"/>
+  </svg>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="badge"><span class="dot" aria-hidden="true"></span>In development · not yet available</span>
+      <h1>See your ovarian age, <em>early enough</em> to plan.</h1>
+      <p class="hero-lead">
+        <span class="t-lg">FertiClock is developing a finger-prick blood test that reads proteins linked to both the <strong>number</strong> and the <strong>quality</strong> of your eggs, and shows your ovarian age next to your real age, explained in plain language.</span>
+        <span class="t-sm">A finger-prick blood test that reads proteins linked to both the <strong>number</strong> and the <strong>quality</strong> of your eggs, and shows your ovarian age next to your real age.</span>
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-lg" href="#waitlist">Join the waitlist <svg aria-hidden="true" class="ico" width="18" height="18"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-secondary btn-lg" href="#how">How it works</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-arch-bg" aria-hidden="true"></div>
+      <img class="hero-img" src="assets/img/hero-600.webp"
+           srcset="assets/img/hero-600.webp 600w, assets/img/hero-1000.webp 1000w"
+           sizes="(min-width: 1024px) 460px, 310px"
+           width="1000" height="1000" fetchpriority="high"
+           alt="Microscope image of a human egg cell in warm pink and peach tones">
+
+      <div class="result-card">
+        <div class="result-card-head">
+          <span class="eyebrow-sm">Your result</span>
+          <span class="tag">Example</span>
+        </div>
+        <div class="result-card-body">
+          <svg class="ring" role="img" aria-label="Ovary score 75 out of 100" width="76" height="76" viewBox="0 0 76 76">
+            <circle cx="38" cy="38" r="32" fill="none" stroke="#F6DCE5" stroke-width="8"/>
+            <circle cx="38" cy="38" r="32" fill="none" stroke="#863F64" stroke-width="8" stroke-linecap="round" stroke-dasharray="150.8 201" transform="rotate(-90 38 38)"/>
+            <text x="38" y="45" text-anchor="middle" font-family="Literata, Georgia, serif" font-size="21" fill="#3A2438">75</text>
+          </svg>
+          <div class="result-card-nums">
+            <span class="muted-sm">Ovarian age</span>
+            <span class="result-age">≈ 35</span>
+            <span class="muted-sm">Your age: 32</span>
+          </div>
+        </div>
+        <p class="result-card-note">About 3 years ahead of your age. Worth discussing with your gynaecologist this year.</p>
+      </div>
+
+      <div class="float-pill">
+        <span class="float-pill-ico" aria-hidden="true"><svg class="ico" width="16" height="16"><use href="#i-drop"/></svg></span>
+        One finger-prick sample
+      </div>
+    </div>
+
+    <p class="hero-note">
+      <svg aria-hidden="true" class="ico ico-plum" width="18" height="18"><use href="#i-shield"/></svg>
+      <span>A guide for an informed conversation with your gynaecologist, not a prediction of whether you will conceive.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ 2. AT A GLANCE ============ -->
+<section class="glance" aria-label="At a glance">
+  <div class="container">
+    <ul class="glance-list">
+      <li><span class="icon-tile tile-blush" aria-hidden="true"><svg class="ico" width="22" height="22"><use href="#i-drop"/></svg></span>
+        <span><span class="t-lg">One finger-prick blood sample</span><span class="t-sm">One finger-prick sample</span></span></li>
+      <li><span class="icon-tile tile-peach" aria-hidden="true"><svg class="ico" width="22" height="22"><use href="#i-circles"/></svg></span>
+        <span><span class="t-lg">Egg quantity and quality, together</span><span class="t-sm">Quantity and quality, together</span></span></li>
+      <li><span class="icon-tile tile-blush" aria-hidden="true"><svg class="ico" width="22" height="22"><use href="#i-gauge"/></svg></span>
+        <span>Your result as an age range</span></li>
+      <li><span class="icon-tile tile-peach" aria-hidden="true"><svg class="ico" width="22" height="22"><use href="#i-chat"/></svg></span>
+        <span><span class="t-lg">Explained, with a specialist if you want one</span><span class="t-sm">Explained, with a specialist</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 3. WHY IT MATTERS ============ -->
+<section class="section" id="why">
+  <div class="container stack-48">
+    <div class="why-top">
+      <div class="section-head">
+        <span class="eyebrow">The woman of 2026</span>
+        <h2>Motherhood is happening later. <em>Biology hasn’t moved with it.</em></h2>
+        <p class="lead"><span class="t-lg">Not because biology has changed, but because life has. </span>Study, careers, housing and finding the right partner all take time, while fertility still declines with age.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat stat-plum">
+          <span class="stat-label"><span class="t-lg">Peak childbearing age in Europe</span><span class="t-sm">Peak childbearing age, Europe</span></span>
+          <span class="stat-num">25–29 → 30–34</span>
+          <span class="stat-src">2004 → 2024 · Eurostat</span>
+        </div>
+        <div class="stat stat-peach">
+          <span class="stat-label">EU fertility rate, record low</span>
+          <span class="stat-num">1.38</span>
+          <span class="stat-src"><span class="t-lg">children per woman</span><span class="t-sm">per woman</span> · 2023 · Eurostat</span>
+        </div>
+      </div>
+    </div>
+
+    <ul class="factor-grid">
+      <li class="factor"><svg aria-hidden="true" class="ico" width="28" height="28"><use href="#i-grad"/></svg>
+        <h3>Education &amp; career</h3><p>More years studying and building a career.</p></li>
+      <li class="factor"><svg aria-hidden="true" class="ico" width="28" height="28"><use href="#i-home"/></svg>
+        <h3>Financial pressure</h3><p>Housing costs and job insecurity can delay plans.</p></li>
+      <li class="factor"><svg aria-hidden="true" class="ico" width="28" height="28"><use href="#i-heart"/></svg>
+        <h3>Relationships</h3><p>Finding a partner and feeling ready take time.</p></li>
+      <li class="factor"><svg aria-hidden="true" class="ico" width="28" height="28"><use href="#i-people"/></svg>
+        <h3>Childcare &amp; support</h3><p>Care costs and work–family balance matter.</p></li>
+    </ul>
+
+    <div class="gap-band">
+      <span class="eyebrow">The gap</span>
+      <span class="gap-text">Life plans shift later. Biological fertility still declines with age.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. THE PROBLEM ============ -->
+<section class="section section-blush">
+  <div class="container stack-48">
+    <div class="section-head narrow">
+      <span class="eyebrow">The problem</span>
+      <h2>Women need clearer information, earlier.</h2>
+      <p class="lead t-lg">Most women learn about their ovarian reserve only when they struggle to conceive, when options such as egg freezing work less well.</p>
+    </div>
+    <ol class="problem-grid">
+      <li class="problem">
+        <span class="num-circle" aria-hidden="true">1</span>
+        <div><h3>Late questions</h3>
+          <p><span class="t-lg">Many women look for information only once fertility concerns arise.</span><span class="t-sm">Information is sought only once concerns arise.</span></p></div>
+      </li>
+      <li class="problem">
+        <span class="num-circle" aria-hidden="true">2</span>
+        <div><h3>A demanding path</h3>
+          <p><span class="t-lg">Visits, intimate examinations and uncertainty can feel overwhelming.</span><span class="t-sm">Visits, intimate exams and uncertainty can overwhelm.</span></p></div>
+      </li>
+      <li class="problem">
+        <span class="num-circle" aria-hidden="true">3</span>
+        <div><h3>Partial answers</h3>
+          <p><span class="t-lg">AMH and follicle counts describe egg quantity. They don’t fully describe egg quality.</span><span class="t-sm">AMH and follicle counts describe quantity, not quality.</span></p></div>
+      </li>
+      <li class="problem">
+        <span class="num-circle" aria-hidden="true">4</span>
+        <div><h3>Hard to interpret</h3>
+          <p><span class="t-lg">Age, symptoms and test results need a clear, clinically grounded explanation.</span><span class="t-sm">Results need a clear, clinically grounded explanation.</span></p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 5. MEET MICHELLE ============ -->
+<section class="section">
+  <div class="container split">
+    <div class="michelle-art">
+      <img src="assets/img/michelle.webp" width="462" height="249" loading="lazy" decoding="async"
+           alt="Illustration of a woman holding a clock beside a test tube being placed into a freezing container">
+      <span class="michelle-tag">Who we build for</span>
+    </div>
+    <div class="michelle-copy">
+      <h2>Meet Michelle, 33.</h2>
+      <p class="lead">Not trying to conceive yet<span class="t-lg">, and not sure when</span>. She has heard of egg freezing but doesn’t know whether she needs it now.</p>
+      <blockquote class="quote">“Freeze my eggs now, or re-test next year?”</blockquote>
+      <div class="outcome-grid">
+        <div class="outcome outcome-blush">
+          <span class="outcome-if"><span class="t-lg">If her ovarian age is older than her real age</span><span class="t-sm">Ovarian age older than her age</span></span>
+          <span>She talks about egg freezing with her gynaecologist this year.</span>
+        </div>
+        <div class="outcome outcome-peach">
+          <span class="outcome-if"><span class="t-lg">If it matches her age, or is younger</span><span class="t-sm">Matches her age, or younger</span></span>
+          <span>She re-tests in 12 months, with peace of mind.</span>
+        </div>
+      </div>
+      <p class="evidence"><span class="t-lg">Why timing matters: among</span><span class="t-sm">Among</span> women who froze their eggs by choice, about half of those who froze at 35 or younger had a baby, against about 1 in 4 at 36 or older. <span class="nowrap">(Cobo et al., Fertil Steril 2016)</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. HOW IT WILL WORK ============ -->
+<section class="section section-blush-strong" id="how">
+  <div class="container split split-how">
+    <div class="stack-32">
+      <div class="section-head">
+        <span class="eyebrow eyebrow-dark">How it will work</span>
+        <h2>Three calm steps, from home.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num" aria-hidden="true">1</span>
+          <div><h3>Get your kit</h3>
+            <p><span class="t-lg">Order it, or receive it from your gynaecologist, and register it in the FertiClock app.</span><span class="t-sm">Order it, or get it from your gynaecologist. Register it in the app.</span></p></div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">2</span>
+          <div><h3>A finger-prick sample</h3>
+            <p><span class="t-lg">Collect a few drops of blood at home. Depending on the final design, the test is read at home or analysed by an accredited lab. No ultrasound, no clinic visit.</span><span class="t-sm">A few drops at home, read at home or by an accredited lab. No clinic visit.</span></p></div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">3</span>
+          <div><h3>Your ovarian age, explained</h3>
+            <p><span class="t-lg">See it next to your real age, with what it means and what it doesn’t. If it runs ahead of your age, book an online consultation with a fertility specialist.</span><span class="t-sm">Next to your real age, with what it means. Book a specialist if you want one.</span></p></div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="how-visual">
+      <img class="how-photo" src="assets/img/finger-prick.webp" width="469" height="400" loading="lazy" decoding="async"
+           alt="Hand holding a small lancet next to a fingertip, ready for a finger-prick sample">
+      <div class="phone" role="img" aria-label="Phone app screen showing an example result: ovary score 75 of 100, ovarian age about 35, real age 32">
+        <div class="phone-screen">
+          <div class="phone-top">
+            <img src="assets/logo/fertiClock-wordmark.png" alt="" width="597" height="90" loading="lazy">
+            <span class="tag">Example</span>
+          </div>
+          <div class="phone-title">
+            <span class="phone-h">Your result</span>
+            <span class="phone-sub t-lg">Result ready · age 32</span>
+          </div>
+          <div class="phone-ring">
+            <svg aria-hidden="true" width="150" height="150" viewBox="0 0 150 150">
+              <circle cx="75" cy="75" r="62" fill="none" stroke="#F6DCE5" stroke-width="12"/>
+              <circle cx="75" cy="75" r="62" fill="none" stroke="#863F64" stroke-width="12" stroke-linecap="round" stroke-dasharray="292.2 389.6" transform="rotate(-90 75 75)"/>
+              <text x="75" y="81" text-anchor="middle" font-family="Literata, Georgia, serif" font-size="40" fill="#3A2438">75</text>
+              <text x="75" y="103" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11" fill="#7A6670">of 100 · ovary score</text>
+            </svg>
+          </div>
+          <div class="phone-tiles">
+            <div class="phone-tile phone-tile-blush"><span>Ovarian age</span><strong>≈ 35</strong></div>
+            <div class="phone-tile"><span>Your age</span><strong>32</strong></div>
+          </div>
+          <p class="phone-note">About 3 years ahead of your age. Talk to your gynaecologist this year.</p>
+          <span class="phone-btn">Book a consultation</span>
+          <span class="phone-link t-lg">What this result does not tell you</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. THE SCIENCE ============ -->
+<section class="section" id="science">
+  <div class="container stack-48">
+    <div class="section-head narrow">
+      <span class="eyebrow">The science</span>
+      <h2>One sample, three questions about <span class="t-lg">how your ovaries are ageing.</span><span class="t-sm">ovarian ageing.</span></h2>
+    </div>
+    <p class="definition">
+      <span class="muted t-lg">Our definition:</span>
+      <strong>Ovarian ageing</strong>
+      <span class="op" aria-hidden="true">=</span>
+      <span class="chip chip-blush"><span class="t-lg">egg </span>quality</span>
+      <span class="op" aria-hidden="true">+</span>
+      <span class="chip chip-peach"><span class="t-lg">egg </span>quantity</span>
+    </p>
+
+    <div class="science-grid">
+      <ol class="markers">
+        <li class="marker">
+          <div class="marker-head">
+            <h3><span class="t-lg">1 · </span>Age-linked ovarian proteins</h3>
+            <span class="marker-tag">Overall ageing</span>
+          </div>
+          <p><span class="t-lg">Proteins made by the ovaries that circulate in blood and change with age.</span><span class="t-sm">Made by the ovaries, circulating in blood, changing with age.</span></p>
+        </li>
+        <li class="marker">
+          <div class="marker-head">
+            <h3><span class="t-lg">2 · </span>Proteins linked to egg quality</h3>
+            <span class="marker-tag">Egg quality</span>
+          </div>
+          <p><span class="t-lg">Matched to measured outcomes in fertility care: fertilisation, embryo quality, live birth.</span><span class="t-sm">Matched to fertilisation, embryo quality and live birth.</span></p>
+        </li>
+        <li class="marker marker-peach">
+          <div class="marker-head">
+            <h3><span class="t-lg">3 · </span>AMH, the reserve marker</h3>
+            <span class="marker-tag">Egg quantity</span>
+          </div>
+          <p>Measured in the same drop of blood<span class="t-lg">, as an indirect estimate of ovarian reserve</span>.</p>
+        </li>
+      </ol>
+
+      <figure class="curve-card">
+        <figcaption>
+          <span class="curve-title"><span class="t-lg">From a score to an age you can understand</span><span class="t-sm">From a score to an age</span></span>
+          <span class="curve-sub t-lg">Typical ovary score by age (0–100). A machine-learning model reads your protein pattern as a score; the curve turns it into an age.</span>
+        </figcaption>
+        <svg class="curve" role="img" aria-label="Illustrative curve: ovary score stays near 100 in the early twenties and falls steeply after the early thirties. A score of 75 corresponds to an ovarian age of about 35." viewBox="0 0 520 280">
+          <g class="curve-axis" font-family="Manrope, sans-serif" fill="#7A6670">
+            <line x1="44" y1="20" x2="44" y2="240" stroke="#EADBE0"/>
+            <line x1="44" y1="240" x2="510" y2="240" stroke="#EADBE0"/>
+            <line x1="44" y1="75" x2="510" y2="75" stroke="#F4EBEE" stroke-dasharray="3 4"/>
+            <line x1="44" y1="130" x2="510" y2="130" stroke="#F4EBEE" stroke-dasharray="3 4"/>
+            <line x1="44" y1="185" x2="510" y2="185" stroke="#F4EBEE" stroke-dasharray="3 4"/>
+            <text x="34" y="25" text-anchor="end">100</text>
+            <text class="tick-minor" x="34" y="80" text-anchor="end">75</text>
+            <text x="34" y="135" text-anchor="end">50</text>
+            <text class="tick-minor" x="34" y="190" text-anchor="end">25</text>
+            <text x="34" y="245" text-anchor="end">0</text>
+            <text x="44" y="262" text-anchor="middle">20</text>
+            <text class="tick-minor" x="124" y="262" text-anchor="middle">25</text>
+            <text x="204" y="262" text-anchor="middle">30</text>
+            <text class="tick-minor" x="284" y="262" text-anchor="middle">35</text>
+            <text x="364" y="262" text-anchor="middle">40</text>
+            <text class="tick-minor" x="444" y="262" text-anchor="middle">45</text>
+            <text class="tick-minor" x="277" y="278" text-anchor="middle">Age (years)</text>
+          </g>
+          <path d="M44 22 C 140 22, 200 30, 240 52 S 330 160, 380 200 S 470 236, 506 238" fill="none" stroke="#863F64" stroke-width="3" stroke-linecap="round" class="curve-line"/>
+          <line x1="44" y1="75" x2="284" y2="75" stroke="#C7769C" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <line x1="284" y1="75" x2="284" y2="240" stroke="#C7769C" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <circle cx="284" cy="75" r="7" fill="#863F64" stroke="#FFFFFF" stroke-width="3"/>
+          <rect x="296" y="50" width="122" height="26" rx="13" fill="#F6DCE5"/>
+          <text x="357" y="67" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#6E3352">75 → age ≈ 35</text>
+        </svg>
+        <p class="curve-caption">Illustrative curve. Cohort data collection has not started.</p>
+      </figure>
+    </div>
+
+    <div class="rule-band">
+      <svg aria-hidden="true" class="ico" width="28" height="28"><use href="#i-shield"/></svg>
+      <p><strong>Our rule:</strong> <span class="t-lg">a protein stays in the panel only if it predicts egg quantity and quality better than age plus AMH alone. If the panel can’t beat that benchmark, we change course.</span><span class="t-sm">a protein stays only if it predicts better than age plus AMH alone.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. WHAT'S DIFFERENT ============ -->
+<section class="section section-blush">
+  <div class="container stack-40">
+    <div class="section-head narrow">
+      <span class="eyebrow">What’s different</span>
+      <h2>Today’s tests count eggs. <span class="t-lg">FertiClock adds</span><span class="t-sm">We add</span> quality, and an age.</h2>
+    </div>
+
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <caption class="sr-only">How FertiClock compares with existing approaches</caption>
+        <thead>
+          <tr><th scope="col">Approach</th><th scope="col">What it reads</th><th scope="col">What you get</th><th scope="col">Egg-quality markers</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">AMH test / follicle scan</th><td>Blood hormone or ultrasound, at the clinic</td><td>Egg quantity only</td><td class="no">No</td></tr>
+          <tr><th scope="row">Home hormone tests</th><td>Home blood sample, lab hormones</td><td>Hormonal-health report</td><td class="no">No</td></tr>
+          <tr><th scope="row">Cycle trackers</th><td>Urine hormones, every month</td><td>Cycle and ovulation timing</td><td class="no">No</td></tr>
+          <tr><th scope="row">Reserve scores</th><td>Reserve markers plus age</td><td>Reserve score from quantity markers</td><td class="no">No</td></tr>
+          <tr class="us"><th scope="row">FertiClock</th><td>Finger-prick blood: protein pattern + AMH + your history</td><td><strong>Ovary score (quantity + quality) → ovarian age</strong></td><td class="yes">Yes, in validation</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="compare-list">
+      <li><span class="cl-name">AMH test / follicle scan</span><span class="cl-val">Quantity only</span></li>
+      <li><span class="cl-name">Home hormone tests</span><span class="cl-val">Hormone report</span></li>
+      <li><span class="cl-name">Cycle trackers</span><span class="cl-val">The monthly cycle</span></li>
+      <li><span class="cl-name">Reserve scores</span><span class="cl-val">Quantity markers</span></li>
+      <li class="us"><span class="cl-us-name">FertiClock</span><span class="cl-us-val">Quantity + quality → your ovarian age</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 9. OUR PROMISE ============ -->
+<section class="section">
+  <div class="container stack-40">
+    <div class="section-head narrow">
+      <span class="eyebrow">Our promise</span>
+      <h2>Clear about what it is, and what it isn’t.</h2>
+    </div>
+    <div class="promise-grid">
+      <div class="promise promise-is">
+        <h3>FertiClock is</h3>
+        <ul>
+          <li><svg aria-hidden="true" class="ico ico-plum" width="22" height="22"><use href="#i-check"/></svg><span><span class="t-lg">A starting point for an informed conversation with your doctor</span><span class="t-sm">A starting point for a talk with your doctor</span></span></li>
+          <li><svg aria-hidden="true" class="ico ico-plum" width="22" height="22"><use href="#i-check"/></svg><span><span class="t-lg">A result given as a range, with its limits stated plainly</span><span class="t-sm">A range, with its limits stated plainly</span></span></li>
+          <li><svg aria-hidden="true" class="ico ico-plum" width="22" height="22"><use href="#i-check"/></svg><span>Built on outcomes measured in<span class="t-lg"> real</span> fertility care</span></li>
+        </ul>
+      </div>
+      <div class="promise promise-not">
+        <h3>FertiClock is not</h3>
+        <ul>
+          <li><svg aria-hidden="true" class="ico ico-terra" width="22" height="22"><use href="#i-minus"/></svg><span><span class="t-lg">A prediction of whether you will conceive naturally</span><span class="t-sm">A prediction of natural conception</span></span></li>
+          <li><svg aria-hidden="true" class="ico ico-terra" width="22" height="22"><use href="#i-minus"/></svg><span>A diagnosis, or a replacement for your gynaecologist</span></li>
+          <li><svg aria-hidden="true" class="ico ico-terra" width="22" height="22"><use href="#i-minus"/></svg><span>Available yet: we are still validating it</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. OUR PATH ============ -->
+<section class="section section-peach">
+  <div class="container stack-40">
+    <div class="section-head narrow">
+      <span class="eyebrow">Our path</span>
+      <h2><span class="t-lg">Build with clinics. Launch through gynaecologists. Then grow.</span><span class="t-sm">Build, launch, then grow.</span></h2>
+    </div>
+    <ol class="path-grid">
+      <li class="path path-ink">
+        <span class="path-tag">1 · Now</span>
+        <h3>Build</h3>
+        <p><span class="t-lg">Research partners and IVF clinics provide the protein measurements and the clinical outcomes we validate against.</span><span class="t-sm">With research partners and IVF clinics: protein measurements and clinical outcomes.</span></p>
+      </li>
+      <li class="path path-plum">
+        <span class="path-tag">2 · Next</span>
+        <h3>Launch</h3>
+        <p><span class="t-lg">Gynaecologists order and explain the test. Regulatory route: CE marking under the EU In Vitro Diagnostic Regulation.</span><span class="t-sm">Gynaecologists order and explain the test. CE marking under the EU IVD Regulation.</span></p>
+      </li>
+      <li class="path path-blush">
+        <span class="path-tag">3 · After validation</span>
+        <h3>Grow</h3>
+        <p>Women can order the test directly, once <span class="t-lg">it has been </span>validated.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 11. TEAM ============ -->
+<section class="section" id="team">
+  <div class="container stack-40">
+    <div class="section-head narrow">
+      <span class="eyebrow">The team</span>
+      <h2><span class="t-lg">Clinical insight meets laboratory and data expertise.</span><span class="t-sm">Clinic, lab and data, at NTUA.</span></h2>
+      <p class="lead t-lg">Three members of the National Technical University of Athens (NTUA), covering the clinic, the lab and the data.</p>
+    </div>
+    <ul class="team-grid">
+      <li class="member member-blush">
+        <img src="assets/img/team-makri.webp" width="170" height="170" loading="lazy" decoding="async" alt="Portrait of Aikaterini Makri">
+        <div class="member-id">
+          <span class="member-disc">Clinical</span>
+          <h3>Aikaterini Makri</h3>
+          <span class="member-role"><span class="t-lg">Medical doctor · Obstetrics &amp; gynaecology resident</span><span class="t-sm">MD · O&amp;G resident</span></span>
+        </div>
+        <p class="member-bio">Leads the clinical protocol, ethics and consent, and the link with fertility clinics.</p>
+      </li>
+      <li class="member member-peach">
+        <img src="assets/img/team-karagiannopoulou.webp" width="192" height="178" loading="lazy" decoding="async" alt="Portrait of Athanasia Karagiannopoulou">
+        <div class="member-id">
+          <span class="member-disc">Laboratory</span>
+          <h3>Athanasia Karagiannopoulou</h3>
+          <span class="member-role">Biotechnologist · Integrated MSci</span>
+        </div>
+        <p class="member-bio">Leads protein selection, sample handling and lab testing.</p>
+      </li>
+      <li class="member member-mauve">
+        <img src="assets/img/team-paraskevopoulos.webp" width="170" height="170" loading="lazy" decoding="async" alt="Portrait of George Paraskevopoulos">
+        <div class="member-id">
+          <span class="member-disc">Software &amp; business</span>
+          <h3>George Paraskevopoulos</h3>
+          <span class="member-role"><span class="t-lg">Electrical &amp; computer engineer · Technical PM</span><span class="t-sm">ECE engineer · Technical PM</span></span>
+        </div>
+        <p class="member-bio">Builds the score model, statistical validation, data platform and app.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 12. FAQ ============ -->
+<section class="section section-blush" id="faq">
+  <div class="container container-faq stack-32">
+    <h2 class="faq-title">Questions, answered gently</h2>
+    <div class="faq-list">
+      <details class="faq" open>
+        <summary>Can I order the test today?<svg aria-hidden="true" class="ico faq-chev" width="20" height="20"><use href="#i-chevron"/></svg></summary>
+        <p>Not yet. FertiClock is in research and validation. Join the waitlist and we’ll tell you when the test, or a study you can take part in, opens.</p>
+      </details>
+      <details class="faq">
+        <summary>Will it tell me whether I can get pregnant?<svg aria-hidden="true" class="ico faq-chev" width="20" height="20"><use href="#i-chevron"/></svg></summary>
+        <p>No. It estimates how your ovaries are ageing compared with your real age. It does not predict natural conception.</p>
+      </details>
+      <details class="faq">
+        <summary>Who is it for?<svg aria-hidden="true" class="ico faq-chev" width="20" height="20"><use href="#i-chevron"/></svg></summary>
+        <p>Women aged roughly 25–39 who aren’t trying to conceive yet but want to keep the option open, and women preparing for IVF or egg freezing.</p>
+      </details>
+      <details class="faq">
+        <summary>How will my data be protected?<svg aria-hidden="true" class="ico faq-chev" width="20" height="20"><use href="#i-chevron"/></svg></summary>
+        <!-- TODO: final privacy summary to be written with a data-protection advisor. -->
+        <p>For now we only collect your email address and your consent, to send you news about FertiClock. We don’t ask for any health data, we don’t use trackers or advertising cookies, and you can ask us to delete your email at any time. Read our <a href="privacy.html">privacy policy</a>.</p>
+      </details>
+      <details class="faq">
+        <summary>I’m a gynaecologist or a clinic. Can we take part?<svg aria-hidden="true" class="ico faq-chev" width="20" height="20"><use href="#i-chevron"/></svg></summary>
+        <p>Yes, please. We are looking for clinical, proteomics and assay partners. Write to us at <a href="mailto:hello@example.com" data-team-email>[TEAM EMAIL]</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13. WAITLIST ============ -->
+<section class="section waitlist-section" id="waitlist">
+  <div class="container">
+    <div class="waitlist">
+      <svg class="deco deco-waitlist" aria-hidden="true" width="520" height="520" viewBox="0 0 520 520">
+        <circle cx="260" cy="260" r="250" fill="none" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="1.5" stroke-dasharray="1200 370"/>
+        <line x1="260" y1="260" x2="350" y2="170" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="260" cy="260" r="7" fill="#F6DCE5" fill-opacity="0.5"/>
+      </svg>
+      <div class="waitlist-copy">
+        <h2>Be the first to know.</h2>
+        <p><span class="t-lg">Join the waitlist for news on the test, early studies and our launch. No spam, only what matters.</span><span class="t-sm">News on the test, early studies and our launch. Only what matters.</span></p>
+      </div>
+
+      <div class="form-card">
+        <form class="waitlist-form" id="waitlist-form" novalidate aria-label="Join the waitlist">
+          <label class="field-label" for="wl-email">Email address</label>
+          <input class="input" id="wl-email" name="email" type="email" inputmode="email" autocomplete="email"
+                 placeholder="you@example.com" required aria-describedby="wl-email-error">
+          <p class="field-error" id="wl-email-error" hidden></p>
+
+          <!-- Honeypot: hidden from people, bots fill it in. -->
+          <div class="hp" aria-hidden="true">
+            <label for="wl-company">Company</label>
+            <input id="wl-company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="consent">
+            <input id="wl-consent" name="consent" type="checkbox" required aria-describedby="wl-consent-error">
+            <label for="wl-consent">I agree to receive emails about FertiClock. Read our <a href="privacy.html">privacy policy</a>.</label>
+          </div>
+          <p class="field-error" id="wl-consent-error" hidden></p>
+
+          <button class="btn btn-primary btn-lg form-submit" type="submit">
+            <span class="btn-label">Join the waitlist</span>
+          </button>
+
+          <p class="form-status" id="wl-status" role="status" aria-live="polite"></p>
+
+          <p class="form-partner"><span class="t-lg">A clinician or research partner? <a href="mailto:hello@example.com" data-team-email>Partner with us</a></span><span class="t-sm">Clinician or partner? <a href="mailto:hello@example.com" data-team-email>Get in touch</a></span></p>
+        </form>
+
+        <div class="form-success" id="wl-success" hidden tabindex="-1">
+          <span class="success-ico" aria-hidden="true"><svg class="ico" width="26" height="26"><use href="#i-check"/></svg></span>
+          <h3>You’re on the list.</h3>
+          <p>Thank you. We’ll write only when there is real news: the test, an early study you can join, or our launch. You can unsubscribe at any time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ 14. FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand brand-light">
+          <img class="brand-mark" src="assets/logo/fertiClock-mark-light.png" alt="" width="76" height="84" loading="lazy">
+          <img class="brand-word" src="assets/logo/fertiClock-wordmark-light.png" alt="FertiClock" width="597" height="90" loading="lazy">
+        </div>
+        <p>A clearer view of reproductive ageing. A research project from the National Technical University of Athens.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <div class="footer-col">
+          <span class="footer-h">Explore</span>
+          <a href="#how">How it works</a>
+          <a href="#science">The science</a>
+          <a href="#team">Team</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-h">Contact</span>
+          <a href="mailto:hello@example.com" data-team-email>[TEAM EMAIL]</a>
+          <!-- TODO: LinkedIn link when the page exists -->
+          <a href="privacy.html">Privacy policy</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer">FertiClock is in research and development and is not yet available. It is not a medical device and does not diagnose or predict fertility or the chance of conception. Always consult a healthcare professional.</p>
+      <p>© 2026 FertiClock · Athens, Greece</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
