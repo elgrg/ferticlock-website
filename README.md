@@ -30,7 +30,7 @@ python3 -m http.server 8765
 The form posts to a Google Apps Script web app that appends a row to a Google Sheet.
 Script and setup steps: `../waitlist-apps-script/Code.gs`.
 Then paste the web-app URL into `js/main.js` → `CONFIG.WAITLIST_ENDPOINT`.
-While it is empty, the form runs in demo mode and stores nothing.
+Leave it empty to run the form in demo mode (nothing is stored).
 
 ## Copy variants
 

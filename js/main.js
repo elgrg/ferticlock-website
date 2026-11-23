@@ -5,7 +5,7 @@
   /* ---------------- Config ---------------- */
   var CONFIG = {
     // Google Apps Script Web App URL (ends in /exec). Empty = form runs in demo mode.
-    WAITLIST_ENDPOINT: '',
+    WAITLIST_ENDPOINT: 'https://script.google.com/macros/s/AKfycbyuPvcq7sqmndaBBTp0ZN4iwPtViKhXj06akeC4Ylqol-D6aCJueRiUKmkiog4zDg/exec',
     // Bump when the consent wording changes, so each sign-up records which text was agreed to.
     CONSENT_VERSION: 'v1-2026-11'
   };
