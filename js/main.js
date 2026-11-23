@@ -94,6 +94,9 @@
         revealIO.observe(el);
       });
     });
+    // Footer logo spins once when it comes into view.
+    var footerBrand = document.querySelector('.site-footer .brand');
+    if (footerBrand) revealIO.observe(footerBrand);
   } else {
     // No animation: make sure ring/curve end states are shown.
     document.querySelectorAll('.how-visual, .curve-card').forEach(function (el) { el.classList.add('is-visible'); });

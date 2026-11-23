@@ -663,9 +663,12 @@ h2 {
     .btn .ico { transition: transform .2s var(--fc-ease); }
     .btn:hover .ico { transform: translateX(3px); }
 
-    /* Logo: the clock mark turns once around its centre dot */
-    .brand .brand-mark { transform-origin: 46% 49%; }
-    .brand:hover .brand-mark { animation: fc-spin .9s var(--fc-ease); }
+    /* Logo: the clock mark turns once around its centre dot on hover.
+       Own keyframe name so it can replay after the on-load spin. */
+    .brand:hover .brand-mark { animation: fc-spin-hover .9s var(--fc-ease); }
+    /* Header: keep the on-load spin in the list so it doesn't replay when the mouse leaves. */
+    .js .site-header .brand:hover .brand-mark { animation: fc-spin 1.2s var(--fc-ease) .25s both, fc-spin-hover .9s var(--fc-ease); }
+    .js .site-footer .brand.is-visible:hover .brand-mark { animation: fc-spin 1.2s var(--fc-ease) .2s both, fc-spin-hover .9s var(--fc-ease); }
 
     .nav-desktop a { position: relative; }
     .nav-desktop a::after {
@@ -702,6 +705,12 @@ h2 {
 
   /* FAQ answer fades in when opened */
   .faq[open] p { animation: fc-fade-up .35s var(--fc-ease) both; }
+
+  /* ---- Logo: one spin when the page loads (header logo) ---- */
+  .brand .brand-mark { transform-origin: 46% 49%; }
+  .js .site-header .brand-mark { animation: fc-spin 1.2s var(--fc-ease) .25s both; }
+  /* Footer logo: one spin when it scrolls into view (class added by main.js) */
+  .js .site-footer .brand.is-visible .brand-mark { animation: fc-spin 1.2s var(--fc-ease) .2s both; }
 
   /* ---- Hero entrance (on load) ---- */
   .js .hero-copy > *, .js .hero-note { animation: fc-fade-up .7s var(--fc-ease) both; }
@@ -741,5 +750,6 @@ h2 {
 @keyframes fc-fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes fc-fade-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fc-float { from { translate: 0 0; } to { translate: 0 -5px; } }
-@keyframes fc-spin { to { transform: rotate(1turn); } }
+@keyframes fc-spin { from { transform: rotate(0); } to { transform: rotate(1turn); } }
+@keyframes fc-spin-hover { from { transform: rotate(0); } to { transform: rotate(1turn); } }
 @keyframes fc-ring { to { stroke-dashoffset: 0; } }
