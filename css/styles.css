@@ -711,7 +711,11 @@ h2 {
   .js .hero-note { animation-delay: .32s; }
   .js .hero-visual { animation: fc-fade-in 1s var(--fc-ease) .1s both; }
   .js .result-card { animation: fc-fade-up .7s var(--fc-ease) .45s both; }
-  .js .float-pill { animation: fc-fade-up .7s var(--fc-ease) .6s both, fc-float 6s ease-in-out 1.4s infinite; }
+  .js .float-pill { animation: fc-fade-up .7s var(--fc-ease) .6s both; }
+  /* Gentle bob: sine easing + alternate gives a smooth wave with no turn-around "bounce".
+     Uses `translate` (not `transform`) so it never fights the entrance animation. */
+  .float-pill { animation: fc-float 3.2s cubic-bezier(.37, 0, .63, 1) 1.3s infinite alternate; }
+  .js .float-pill { animation: fc-fade-up .7s var(--fc-ease) .6s both, fc-float 3.2s cubic-bezier(.37, 0, .63, 1) 1.3s infinite alternate; }
 
   /* Result rings fill up: hero on load, phone when it scrolls into view */
   .js .ring-arc { stroke-dashoffset: var(--arc, 150.8); }
@@ -736,6 +740,6 @@ h2 {
 
 @keyframes fc-fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes fc-fade-in { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fc-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes fc-float { from { translate: 0 0; } to { translate: 0 -5px; } }
 @keyframes fc-spin { to { transform: rotate(1turn); } }
 @keyframes fc-ring { to { stroke-dashoffset: 0; } }
