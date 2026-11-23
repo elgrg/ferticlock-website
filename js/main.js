@@ -62,6 +62,43 @@
     });
   }
 
+  /* ---------------- Scroll reveal ---------------- */
+  // Elements fade up gently as they enter the viewport. Items in the same group are staggered.
+  // Skipped entirely for reduced motion or old browsers, so content is never left hidden.
+  var REVEAL_GROUPS = [
+    '.section-head', '.faq-title', '.glance-list', '.stat-grid > *', '.factor-grid > *', '.gap-band',
+    '.problem-grid > *', '.michelle-art', '.michelle-copy', '.steps > *', '.how-visual',
+    '.definition', '.markers > *', '.curve-card', '.rule-band', '.compare-table-wrap', '.compare-list',
+    '.promise-grid > *', '.path-grid > *', '.team-grid > *', '.faq-list', '.waitlist'
+  ];
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    var revealIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        el.classList.add('is-visible');
+        revealIO.unobserve(el);
+        // Once shown, drop the reveal styles so hover transitions behave normally.
+        setTimeout(function () { el.removeAttribute('data-reveal'); el.style.removeProperty('--i'); }, 1200);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+    REVEAL_GROUPS.forEach(function (selector) {
+      document.querySelectorAll(selector).forEach(function (el) {
+        if (el.offsetParent === null) return; // hidden at this breakpoint
+        var siblings = Array.prototype.filter.call(el.parentElement.children, function (c) { return c.matches(selector); });
+        el.style.setProperty('--i', Math.min(siblings.indexOf(el), 5));
+        el.setAttribute('data-reveal', '');
+        revealIO.observe(el);
+      });
+    });
+  } else {
+    // No animation: make sure ring/curve end states are shown.
+    document.querySelectorAll('.how-visual, .curve-card').forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
   /* ---------------- Waitlist form ---------------- */
   var form = document.getElementById('waitlist-form');
   if (!form) return;

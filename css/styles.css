@@ -642,3 +642,100 @@ h2 {
   .footer-nav a { padding: 6px 0; }
   .footer-bottom { flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 24px; font-size: 13px; }
 }
+
+/* ==========================================================================
+   Motion: light and calm. Hover effects only on devices with a real pointer;
+   everything that moves is switched off for prefers-reduced-motion.
+   ========================================================================== */
+:root {
+  --fc-ease: cubic-bezier(.22, .61, .36, 1);
+  --fc-shadow-hover: 0 18px 40px -24px rgba(58, 36, 56, 0.35);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ---- Hover (mouse / trackpad only) ---- */
+  @media (hover: hover) and (pointer: fine) {
+    .btn { transition: background-color .2s ease, border-color .2s ease, transform .2s var(--fc-ease), box-shadow .2s var(--fc-ease); }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary:hover { box-shadow: 0 10px 24px -12px rgba(134, 63, 100, 0.6); }
+    .btn:active { transform: translateY(0); box-shadow: none; }
+    .btn .ico { transition: transform .2s var(--fc-ease); }
+    .btn:hover .ico { transform: translateX(3px); }
+
+    /* Logo: the clock mark turns once around its centre dot */
+    .brand .brand-mark { transform-origin: 46% 49%; }
+    .brand:hover .brand-mark { animation: fc-spin .9s var(--fc-ease); }
+
+    .nav-desktop a { position: relative; }
+    .nav-desktop a::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 1.5px; border-radius: 2px;
+      background: var(--fc-plum); transform: scaleX(0); transform-origin: left; transition: transform .25s var(--fc-ease);
+    }
+    .nav-desktop a:hover::after { transform: scaleX(1); }
+
+    .factor, .problem, .marker, .member, .path, .promise, .stat, .outcome, .step {
+      transition: transform .3s var(--fc-ease), box-shadow .3s var(--fc-ease), border-color .3s ease;
+    }
+    .factor:hover, .problem:hover, .marker:hover, .member:hover, .path:hover, .promise:hover, .stat:hover, .outcome:hover, .step:hover {
+      transform: translateY(-3px); box-shadow: var(--fc-shadow-hover);
+    }
+    .factor:hover, .promise-not:hover { border-color: var(--fc-border-strong); }
+
+    .factor .ico, .icon-tile .ico { transition: transform .3s var(--fc-ease); }
+    .factor:hover .ico, .glance-list li:hover .icon-tile .ico { transform: scale(1.1); }
+    .num-circle, .step-num { transition: background-color .3s ease, color .3s ease, border-color .3s ease; }
+    .problem:hover .num-circle { background: var(--fc-plum); border-color: var(--fc-plum); color: #fff; }
+
+    .member img { transition: transform .35s var(--fc-ease); }
+    .member:hover img { transform: scale(1.04); }
+
+    .faq { transition: box-shadow .25s var(--fc-ease); }
+    .faq:hover { box-shadow: var(--fc-shadow-hover); }
+    .compare-table tbody tr:not(.us) { transition: background-color .2s ease; }
+    .compare-table tbody tr:not(.us):hover { background: var(--fc-cream); }
+
+    .input { transition: border-color .2s ease, box-shadow .2s ease; }
+    .input:hover { border-color: var(--fc-rose); }
+  }
+  .input:focus { border-color: var(--fc-plum); box-shadow: 0 0 0 4px rgba(199, 118, 156, 0.18); }
+
+  /* FAQ answer fades in when opened */
+  .faq[open] p { animation: fc-fade-up .35s var(--fc-ease) both; }
+
+  /* ---- Hero entrance (on load) ---- */
+  .js .hero-copy > *, .js .hero-note { animation: fc-fade-up .7s var(--fc-ease) both; }
+  .js .hero-copy > :nth-child(2) { animation-delay: .08s; }
+  .js .hero-copy > :nth-child(3) { animation-delay: .16s; }
+  .js .hero-copy > :nth-child(4) { animation-delay: .24s; }
+  .js .hero-note { animation-delay: .32s; }
+  .js .hero-visual { animation: fc-fade-in 1s var(--fc-ease) .1s both; }
+  .js .result-card { animation: fc-fade-up .7s var(--fc-ease) .45s both; }
+  .js .float-pill { animation: fc-fade-up .7s var(--fc-ease) .6s both, fc-float 6s ease-in-out 1.4s infinite; }
+
+  /* Result rings fill up: hero on load, phone when it scrolls into view */
+  .js .ring-arc { stroke-dashoffset: var(--arc, 150.8); }
+  .js .result-card .ring-arc { animation: fc-ring 1.2s var(--fc-ease) .7s forwards; }
+  .js .phone .ring-arc { --arc: 292.2; transition: stroke-dashoffset 1.4s var(--fc-ease) .35s; }
+  .js .how-visual.is-visible .phone .ring-arc { stroke-dashoffset: 0; }
+
+  /* Curve draws itself, then the marker appears */
+  .js .curve-line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s var(--fc-ease) .2s; }
+  .js .curve-card.is-visible .curve-line { stroke-dashoffset: 0; }
+  .js .curve-mark { opacity: 0; transition: opacity .5s ease 1.4s; }
+  .js .curve-card.is-visible .curve-mark { opacity: 1; }
+
+  /* ---- Scroll reveal (classes added by main.js) ---- */
+  .js [data-reveal] {
+    opacity: 0; transform: translateY(18px);
+    transition: opacity .7s var(--fc-ease), transform .7s var(--fc-ease);
+    transition-delay: calc(var(--i, 0) * 80ms);
+  }
+  .js [data-reveal].is-visible { opacity: 1; transform: none; }
+}
+
+@keyframes fc-fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes fc-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fc-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes fc-spin { to { transform: rotate(1turn); } }
+@keyframes fc-ring { to { stroke-dashoffset: 0; } }
